@@ -16,6 +16,9 @@ A simple AngularJS plugin that adds a clear button to input boxes
 - Simple usage:<br />
 `<input type="text" ng-model="myModel" clear-input />`
 
+- Using on a textarea:<br />
+`<textarea ng-model="myModel" clear-input></textarea>`
+
 - Expression:<br />
 `<input type="text" ng-model="myModel" clear-input="myModel = 'newVal'" />`
 
