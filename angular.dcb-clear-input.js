@@ -30,10 +30,15 @@ angular.module('dcbClearInput', [])
                     });
 
                     scope.$watch(attr.ngModel, function(val) {
-                        if (val && val.length > 0) {
-                            btn.css('visibility', 'visible').removeClass('clear-hidden').addClass('clear-visible');
-                        } else {
-                            btn.css('visibility', 'hidden').removeClass('clear-visible').addClass('clear-hidden');
+                        var hasValue = val && val.length > 0;
+                        if (!attr.clearDisableVisibility) {
+                            btn.css('visibility', hasValue ? 'visible' : 'hidden');
+                        }
+
+                        if (hasValue && !btn.hasClass('clear-visible')) {
+                            btn.removeClass('clear-hidden').addClass('clear-visible');
+                        } else if (!hasClass && !btn.hasClass('clear-hidden')) {
+                            btn.removeClass('clear-visible').addClass('clear-hidden');
                         }
                     });
                 }
