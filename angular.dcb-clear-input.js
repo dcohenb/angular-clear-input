@@ -30,7 +30,11 @@ angular.module('dcbClearInput', [])
                     });
 
                     scope.$watch(attr.ngModel, function(val) {
-                        btn.css('visibility', val && val.length > 0 ? 'visible' : 'hidden');
+                        if (val && val.length > 0) {
+                            btn.css('visibility', 'visible').removeClass('clear-hidden').addClass('clear-visible');
+                        } else {
+                            btn.css('visibility', 'hidden').removeClass('clear-visible').addClass('clear-hidden');
+                        }
                     });
                 }
             };
