@@ -5,7 +5,7 @@ A simple AngularJS plugin that adds a clear button to input boxes
 
 ## Installation
 1. Download and import the plugin script.<br />
-`<link rel="stylesheet" href="lib/angular-clear-input/angular.dcb-clear-input.min.js"/>`
+`<script type="text/javascript" src="lib/angular-clear-input/angular.dcb-clear-input.min.js"></script>`
 2. Add `dcbClearInput` to your angular app module dependencies list.<br />
 `angular.module('myAngularApp', ['dcbClearInput']);`
 3. Add the `clear-input` attribute to yout input<br />
