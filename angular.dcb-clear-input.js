@@ -14,6 +14,8 @@ angular.module('dcbClearInput', [])
                     var btn = angular.element(htmlMarkup);
                     btn.addClass(attr.clearBtnClass ? attr.clearBtnClass : "clear-btn");
                     element.after(btn);
+                    element.css("padding-right", "25px");
+                    
 
                     btn.on('click', function(event) {
                         if (attr.clearInput) {
@@ -37,9 +39,10 @@ angular.module('dcbClearInput', [])
 
                         if (hasValue && !btn.hasClass('clear-visible')) {
                             btn.removeClass('clear-hidden').addClass('clear-visible');
-                        } else if (!hasClass && !btn.hasClass('clear-hidden')) {
+                        } else if (!hasValue && !btn.hasClass('clear-hidden')) {
                             btn.removeClass('clear-visible').addClass('clear-hidden');
                         }
+                        btn.css('left', '-20px').css('position', 'relative');
                     });
                 }
             };
