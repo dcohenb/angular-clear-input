@@ -1,7 +1,6 @@
 /*
  Angular Clear Input directive
- (c) 2014 Daniel Cohen. http://dcb.co.il
- License: MIT
+ (c) 2014 Nir Shilon. http://flz.co.il 
  */
 angular.module('dcbClearInput', [])
     .directive('clearInput', ['$parse',
@@ -10,7 +9,7 @@ angular.module('dcbClearInput', [])
                 restrict: 'A',
                 require: 'ngModel',
                 link: function(scope, element, attr) {
-                    var htmlMarkup = attr.clearBtnMarkup ? attr.clearBtnMarkup : '<span>X</span>';
+                    var htmlMarkup = attr.clearBtnMarkup ? attr.clearBtnMarkup : '<span>&times;</span>';
                     var btn = angular.element(htmlMarkup);
                     btn.addClass(attr.clearBtnClass ? attr.clearBtnClass : "clear-btn");
                     element.after(btn);
@@ -37,7 +36,7 @@ angular.module('dcbClearInput', [])
 
                         if (hasValue && !btn.hasClass('clear-visible')) {
                             btn.removeClass('clear-hidden').addClass('clear-visible');
-                        } else if (!hasClass && !btn.hasClass('clear-hidden')) {
+                        } else if (!hasValue && !btn.hasClass('clear-hidden')) {
                             btn.removeClass('clear-visible').addClass('clear-hidden');
                         }
                     });
