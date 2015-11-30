@@ -37,7 +37,7 @@ angular.module('dcbClearInput', [])
 
                         if (hasValue && !btn.hasClass('clear-visible')) {
                             btn.removeClass('clear-hidden').addClass('clear-visible');
-                        } else if (!hasClass && !btn.hasClass('clear-hidden')) {
+                        } else if (!hasValue && !btn.hasClass('clear-hidden')) {
                             btn.removeClass('clear-visible').addClass('clear-hidden');
                         }
                     });
